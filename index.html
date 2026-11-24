@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ポモドーロタイマー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <span id="status-badge" class="badge">FOCUS TIME</span>
+    <h1 id="status-label">作業時間</h1>
+
+    <div id="timer-display">25:00</div>
+
+    <div class="settings">
+      <label>
+        作業（分）
+        <input type="number" id="work-input" value="25" min="1" max="120">
+      </label>
+      <label>
+        休憩（分）
+        <input type="number" id="break-input" value="5" min="1" max="60">
+      </label>
+    </div>
+
+    <div class="controls">
+      <button id="start-btn" class="btn-start">スタート</button>
+      <button id="stop-btn" class="btn-stop">ストップ</button>
+      <button id="reset-btn" class="btn-reset">リセット</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+/* 全体の基本設定と作業モード（赤系）の背景 */
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #fff5f5; /* 淡いピンク・赤系の背景 */
+  color: #2d3748;
+  transition: background-color 0.5s ease;
+}
+
+/* 休憩モード（緑・青系）に切り替わった時の背景 */
+body.break-mode {
+  background-color: #e6fffa; /* 淡いミントグリーンの背景 */
+}
+
+/* 中央の白いカード */
+.container {
+  text-align: center;
+  background: #ffffff;
+  padding: 2.5rem 3.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(229, 62, 62, 0.12);
+  border-top: 8px solid #e53e3e; /* 上部のアクセントライン（赤） */
+  transition: all 0.5s ease;
+}
+
+/* 休憩モード時のカードのアクセント色 */
+body.break-mode .container {
+  box-shadow: 0 10px 25px rgba(49, 151, 149, 0.12);
+  border-top-color: #319795; /* 上部のアクセントライン（ティールグリーン） */
+}
+
+/* 英語の小さなステータスバッジ */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  border-radius: 999px;
+  background-color: #fed7d7;
+  color: #c53030;
+  margin-bottom: 0.5rem;
+  transition: all 0.5s ease;
+}
+
+body.break-mode .badge {
+  background-color: #b2f5ea;
+  color: #285e61;
+}
+
+/* 見出し（作業時間 / 休憩時間） */
+#status-label {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #4a5568;
+}
+
+/* メインのタイマー数字 */
+#timer-display {
+  font-size: 5rem;
+  font-weight: 800;
+  margin: 1rem 0 1.5rem;
+  color: #e53e3e; /* 作業中は鮮やかな赤 */
+  font-variant-numeric: tabular-nums;
+  transition: color 0.5s ease;
+}
+
+body.break-mode #timer-display {
+  color: #319795; /* 休憩中は落ち着いた緑 */
+}
+
+/* 時間入力エリア */
+.settings {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  background-color: #f7fafc;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+}
+
+.settings label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settings input {
+  width: 55px;
+  padding: 0.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #cbd5e0;
+  border-radius: 8px;
+  color: #2d3748;
+}
+
+.settings input:focus {
+  outline: none;
+  border-color: #e53e3e;
+}
+
+body.break-mode .settings input:focus {
+  border-color: #319795;
+}
+
+/* ボタン共通設定 */
+.controls {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.controls button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.controls button:hover {
+  opacity: 0.9;
+}
+
+.controls button:active {
+  transform: scale(0.96); // クリック時に少し凹む演出
+}
+
+/* ボタンごとの個別カラー */
+.btn-start {
+  background-color: #e53e3e; /* 作業中は赤ボタン */
+}
+
+body.break-mode .btn-start {
+  background-color: #319795; /* 休憩中は緑ボタン */
+}
+
+.btn-stop {
+  background-color: #ed8936; /* 一時停止はオレンジ */
+}
+
+.btn-reset {
+  background-color: #a0aec0; /* リセットは控えめなグレー */
+}
